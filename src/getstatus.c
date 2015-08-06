@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include <alsa/asoundlib.h>
+#include <alsa/asoundlib.h> //alsa mixer functions
 
 int getBattery(void)
 {
