@@ -9,11 +9,11 @@ all: dwmstatus
 dwmstatus: dwmstatus.o getstatus.o
 	$(CC) $(CFLAGS) $(LFLAGS) -o dwmstatus dwmstatus.o getstatus.o
 
-dwmstatus.o: dwmstatus.c getstatus.h
-	$(CC) $(CFLAGS) -c dwmstatus.c
+dwmstatus.o: src/dwmstatus.c src/getstatus.h
+	$(CC) $(CFLAGS) -c src/dwmstatus.c
 
-getstatus.o: getstatus.c getstatus.h
-	$(CC) $(CFLAGS) -c getstatus.c
+getstatus.o: src/getstatus.c src/getstatus.h
+	$(CC) $(CFLAGS) -c src/getstatus.c
 
 clean:
 	$(RM) dwmstatus *.o
