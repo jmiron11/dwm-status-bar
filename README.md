@@ -2,9 +2,11 @@
 Status bar for the window manager dwm
 
 Compile with 'make'
+
 `make`
 
 Move executable to /usr/local/bin
+
 `sudo mv ./dwmstatus /usr/local/bin`
 
 Optional:
