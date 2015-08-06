@@ -24,7 +24,10 @@ void openDisplay(void);
 
 int main(void)
 {
+	// status string
 	char * status;
+
+	// status variables
 	int bat0;
 	long volume;
 	char * timeString;
