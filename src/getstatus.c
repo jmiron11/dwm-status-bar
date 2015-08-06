@@ -52,8 +52,8 @@ char getBatteryStatus(void)
 long getVolume(void)
 {
 	snd_mixer_t* handle;
-    snd_mixer_elem_t* elem;
-    snd_mixer_selem_id_t* sid;
+	snd_mixer_elem_t* elem;
+	snd_mixer_selem_id_t* sid;
 	const char *card = "default";
 	const char *selem_name = "Master";
 
@@ -61,17 +61,17 @@ long getVolume(void)
 
 	snd_mixer_open(&handle, 0);	
 	snd_mixer_attach(handle, card);
-    snd_mixer_selem_register(handle, NULL, NULL);
-    snd_mixer_load(handle);
+	snd_mixer_selem_register(handle, NULL, NULL);
+	snd_mixer_load(handle);
 
 
-    snd_mixer_selem_id_alloca(&sid);
-    snd_mixer_selem_id_set_index(sid, 0);
-    snd_mixer_selem_id_set_name(sid, selem_name);
-    elem = snd_mixer_find_selem(handle, sid);
-    snd_mixer_selem_get_playback_volume(elem, 0, &retVolume);
+	snd_mixer_selem_id_alloca(&sid);
+	snd_mixer_selem_id_set_index(sid, 0);
+	snd_mixer_selem_id_set_name(sid, selem_name);
+	elem = snd_mixer_find_selem(handle, sid);
+	snd_mixer_selem_get_playback_volume(elem, 0, &retVolume);
 
-    return retVolume;
+	return retVolume;
 }
 
 char * getTimeString(void)
@@ -113,15 +113,15 @@ char * getWifiStatus(void)
 	int len = strlen(buffer);
 	buffer[len-1] = '\0';
 
-    if(strlen(buffer) == 0)
-    {
-    	strcpy(status, "Disconnected");
-    }
-    else
-    {
-    	strcpy(status, buffer);
-    }
+	if(strlen(buffer) == 0)
+	{
+		strcpy(status, "Disconnected");
+	}
+	else
+	{
+		strcpy(status, buffer);
+	}
 
-    pclose(pipe);
-    return status;
+	pclose(pipe);
+	return status;
 }
